@@ -1,0 +1,40 @@
+QUESTÃO 01
+
+- Fazer o select usando colunas específicas ao invés de * (como nao sei os campos da tabela, criei alguns para ilustrar)
+- Colocar paginação (ajustar de acordo com a necessidade)
+
+SELECT OrderID, CustomerID, OrderDate, TotalAmount
+FROM Orders
+WHERE OrderDate >= '2023-01-01' 
+  AND OrderDate <= '2023-12-31'
+ORDER BY CustomerID
+LIMIT 1000;
+
+QUESTÃO 02
+
+INNER JOIN -> retorna os registros comuns, que possuem correspondencia em ambas as tabelas
+LEFT JOIN -> retorna os registros da tabela à esquerda (primeira tabela) e os correspondentes da tabela a direita (segunda tabela)
+CROSS JOIN -> faz um produto cartesiano entre as duas tabelas, traz todas as combinações possíveis.
+
+
+QUESTÃO 03
+
+Lazy Loading -> As entidades relacionadas são carregadas somente quando acessadas pela primeira vez.
+Eager Loading -> As entidades relacionadas são carregadas junto com a entidade principal, em uma única consulta ao banco de dados.
+Explicit Loading -> Semelhante ao Lazy Loading, mas com a diferença de que o desenvolvedor tem controle total sobre quando carregar as entidades relacionadas.
+
+QUESTÃO 04
+
+AsNoTracking é utilizado para desabilitar o rastreamento de alterações nas entidades retornadas por uma consulta.
+Seu uso é importante em cenários onde as entidades consultadas não precisam ser modificadas e, portanto, não necessitam de rastreamento, resultando em uma melhor performance e menor consumo de memória.
+Um cenário comum seria a implementação de um dashboard de relatórios em uma aplicação, onde várias consultas são feitas apenas para exibição de dados.
+O seu uso nesse cenário citado é motivado por:
+1 - Melhor Desempenho
+2 - Menor Uso de Memória
+3 - Consultas que usam somente leitura de dados.
+
+QUESTÃO 05
+
+Arquitetura Monolitica -> a aplicação é construída como uma única unidade, onde todos os componentes (como a interface de usuário, lógica de negócios, e acesso ao banco de dados) estão interligados e executados como uma única aplicação.
+
+Arquitetura Microserviços -> a aplicação é composta por um conjunto de serviços pequenos e independentes, onde cada serviço implementa uma funcionalidade ou responsabilidade específica.
